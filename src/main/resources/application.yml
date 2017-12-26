@@ -1,0 +1,25 @@
+server:
+  port: 9898
+  context-path: /smb
+
+#datasource
+spring:
+  datasource:
+    name: mb
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: 123456
+
+    #使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: org.postgresql.Driver
+
+
+    #连接池设置
+    maxActive: 20
+    minEvictableIdleTimeMillis: 30000
+    filters: stat,wall
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
